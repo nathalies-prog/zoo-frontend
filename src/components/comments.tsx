@@ -9,6 +9,7 @@ export function FakeComments() {
     { name: 'Max Hippie', comment: 'Schon krass das die Gehege komplett durchgemixt sind🍹', avatar: 'https://i.pravatar.cc/150?img=6' },
     { name: 'Sarah Meier', comment: 'Hier komme ich gerne her.🪴', avatar: 'https://i.pravatar.cc/150?img=20' },
     { name: 'Tobias Wieneke', comment: 'Wo sind die Schweine??🥓', avatar: 'https://i.pravatar.cc/150?img=63' },
+    { name: 'Sascha Oumar', comment: 'Keine Eulen, aber sonst ganz nett 🦉', avatar: 'https://i.pravatar.cc/150?img=69' },
   ];
 
   return (
