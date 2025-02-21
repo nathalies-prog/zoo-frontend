@@ -2,14 +2,14 @@ import { useState } from "react";
 import red from "../assets/red.jpeg";
 import tiger from "../assets/tiger.jpeg";
 import gorilla from "../assets/gorilla.jpeg";
-import penguin from "../assets/penguin.jpeg";
+import penguin from "../assets/pinguin.jpeg";
 import erd from "../assets/erd.jpeg";
 import dog from "../assets/dog.jpeg";
 import nille from "../assets/nilpferde.jpeg"
 import hai from "../assets/hai.webp"
 import kroko from "../assets/kroko.jpeg"
 const ImageSlider = () => {
-  const images = [red, tiger, gorilla, penguin, erd, dog,nille,hai,kroko];
+  const images = [red, tiger,penguin,gorilla, erd, dog,nille,hai,kroko];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -19,7 +19,7 @@ const ImageSlider = () => {
         <img
           src={images[currentIndex]}
           alt={`Bild ${currentIndex}`}
-          className="h-auto w-full rounded-lg"
+          className="h-auto w-[800px] rounded-lg"
         />
       </div>
 

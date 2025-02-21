@@ -10,6 +10,9 @@ export function Header() {
         className="rounded-full border p-2 text-2xl font-bold"
         style={{ width: "100px", height: "100px" }}
       />
+      <div>
+        <h1 className="underline text-2xl text-gray-100">🌺 Im Reich der exotischen Wunder 🌺</h1>
+      </div>
       <ul className="flex gap-8">
         <li>
           <NavLink to="/" className="text-white hover:text-gray-500">
