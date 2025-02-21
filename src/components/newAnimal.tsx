@@ -74,10 +74,10 @@ export function AddAnimal() {
         </button>
   
         {isFormVisible && (
-          <div className="relative">
+          <div className=" flex justify-center relative">
             <form
               onSubmit={handleSubmit}
-              className="absolute w-100 top-0 left-0 right-0 mt-4 p-6 border-2 border-gray-300 rounded-lg backdrop-blur-sm z-20"
+              className="absolute w-100 mt-4 p-6 border-2 border-gray-300 rounded-lg backdrop-blur-sm z-20"
             >
               <h2 className="text-2xl font-bold mb-4">Tier hinzufügen</h2>
   
