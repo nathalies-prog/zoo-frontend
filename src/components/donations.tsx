@@ -21,7 +21,7 @@ export function Donations() {
                 <CardTitle>{donation.person_name}</CardTitle>
               </CardHeader>
               <CardDescription>
-                <p className="text-gray-600">Betrag: {donation.amount} EUR</p>
+                <p className="text-[#085942] font-bold">Betrag: {donation.amount} EUR</p>
                 <p className="text-gray-500">Datum: {new Date(donation.date).toLocaleDateString()}</p>
                 {donation.pdf_url && (
                   <a href={donation.pdf_url} className="text-blue-500">PDF herunterladen</a>

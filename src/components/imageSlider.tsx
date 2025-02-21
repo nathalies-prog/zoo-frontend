@@ -1,13 +1,13 @@
 import { useState } from "react";
-import red from "../assets/red.jpeg";
-import tiger from "../assets/tiger.jpeg";
-import gorilla from "../assets/gorilla.jpeg";
-import penguin from "../assets/pinguin.jpeg";
-import erd from "../assets/erd.jpeg";
-import dog from "../assets/dog.jpeg";
-import nille from "../assets/nilpferde.jpeg"
-import hai from "../assets/hai.webp"
-import kroko from "../assets/kroko.jpeg"
+import red from "../pictures/red.jpeg";
+import tiger from "../pictures/tiger.jpeg";
+import gorilla from "../pictures/gorilla.jpeg";
+import penguin from "../pictures/pinguin.jpeg";
+import erd from "../pictures/erd.jpeg";
+import dog from "../pictures/dog.jpeg";
+import nille from "../pictures/nilpferde.jpeg"
+import hai from "../pictures/hai.webp"
+import kroko from "../pictures/kroko.jpeg"
 const ImageSlider = () => {
   const images = [red, tiger,penguin,gorilla, erd, dog,nille,hai,kroko];
 
