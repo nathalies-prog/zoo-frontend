@@ -20,6 +20,7 @@ const StaffCards = () => {
                     <Card key={staff.id} className="w-full">
                         <CardHeader>
                             <CardTitle>{staff.role}</CardTitle>
+                            <CardTitle>{staff.id}</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <img

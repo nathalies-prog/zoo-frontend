@@ -4,8 +4,12 @@ import tiger from "../assets/tiger.jpeg";
 import gorilla from "../assets/gorilla.jpeg";
 import penguin from "../assets/penguin.jpeg";
 import erd from "../assets/erd.jpeg";
+import dog from "../assets/dog.jpeg";
+import nille from "../assets/nilpferde.jpeg"
+import hai from "../assets/hai.webp"
+import kroko from "../assets/kroko.jpeg"
 const ImageSlider = () => {
-  const images = [red, tiger, gorilla, penguin, erd];
+  const images = [red, tiger, gorilla, penguin, erd, dog,nille,hai,kroko];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 

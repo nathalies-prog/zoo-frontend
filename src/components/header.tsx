@@ -27,13 +27,8 @@ export function Header() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/verkaeufe" className="text-white hover:text-gray-500">
-            Verkaufszahlen
-          </NavLink>
-        </li>
-        <li>
           <NavLink to="/donation" className="text-white hover:text-gray-500">
-            Formular
+            Spenden
           </NavLink>
         </li>
       </ul>

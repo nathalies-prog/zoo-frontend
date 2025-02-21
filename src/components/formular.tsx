@@ -29,6 +29,9 @@ const DonationSchema = z.object({
     message: "Bitte geb ein gültiges Datum ein.",
   }),
 })
+const DonationFormSchema = DonationSchema.extend({
+  amount : z.string(),
+});
 
 export type Donation = {
   person_name: string
@@ -37,23 +40,27 @@ export type Donation = {
 }
 
 export function DonationForm() {
-  const form = useForm<z.infer<typeof DonationSchema>>({
-    resolver: zodResolver(DonationSchema),
+  const form = useForm<z.infer<typeof DonationFormSchema>>({
+    resolver: zodResolver(DonationFormSchema),
     defaultValues: {
       person_name: "",
-      amount: 0,
+      amount: "0",
       date: "",
     },
   })
 
-  async function onSubmit(data: z.infer<typeof DonationSchema>) {
+  async function onSubmit(data: z.infer<typeof DonationFormSchema> ) {
     try {
+      const convertedData : z.infer<typeof DonationSchema> = {
+        ...data,
+        amount: parseFloat(data.amount),
+      };
       const response = await fetch(`${POST_DONATIONS_URL}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(convertedData),
       })
 
       if (response.ok) {
@@ -72,7 +79,7 @@ export function DonationForm() {
 
   return (
     <div className="w-full flex justify-center mt-10">
-      <div className=" w-full bg-[#085942] p-8 rounded-lg shadow-lg">
+      <div className=" w-200 bg-[#085942] p-8 rounded-lg shadow-lg">
         <h2 className="text-2xl font-semibold text-center text-[#D9C7B8] mb-6 underline">Spendenformular</h2>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -83,7 +90,7 @@ export function DonationForm() {
                 <FormItem>
                   <FormLabel className="text-lg text-[#D9C7B8]">Person's Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Max Mustermann" {...field} className="border-2 text-[#0D0D0D] rounded-md p-2 w-full" />
+                    <Input {...field} className="border-2 text-[#0D0D0D] rounded-md p-2 w-full" />
                   </FormControl>
                   <FormDescription className="text-sm text-[#0D0D0D]">Name des Spenders</FormDescription>
                   <FormMessage />
@@ -97,7 +104,7 @@ export function DonationForm() {
                 <FormItem>
                   <FormLabel className="text-lg text-[#D9C7B8]">Betrag</FormLabel>
                   <FormControl>
-                    <Input placeholder="100.00" type="number" {...field} className="border-2 border-gray-300 rounded-md p-2 w-full" />
+                    <Input {...field}  type="number" className="border-2 border-gray-300 rounded-md p-2 w-full" />
                   </FormControl>
                   <FormDescription className="text-sm text-[#0D0D0D]">Der Betrag der Spende</FormDescription>
                   <FormMessage />
@@ -111,7 +118,7 @@ export function DonationForm() {
                 <FormItem>
                   <FormLabel className="text-lg text-[#D9C7B8]">Datum</FormLabel>
                   <FormControl>
-                    <Input placeholder="2025-02-20" type="date" {...field} className="border-2 border-gray-300 rounded-md p-2 w-full" />
+                    <Input type="date" {...field} className="border-2 border-gray-300 rounded-md p-2 w-full" />
                   </FormControl>
                   <FormDescription className="text-sm text-[#0D0D0D]">Datum der Spende</FormDescription>
                   <FormMessage />
